@@ -1,22 +1,26 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("APBD_1");
-Console.WriteLine("s21798");
-Console.WriteLine("console app");
-
-class feature_average
+﻿class Feature_average
 {
-    static void Main()
+    static void Main(string[] args)
     {
-        var arrOfIntegers = new int[] { 12, 17, 25, 30, 6, 17, 156 };
+        Console.WriteLine("APBD_1");
+        Console.WriteLine("s21798");
+        Console.WriteLine("console app");
+
+        var listOfIntegers = new List<int> { 12, 17, 25, 30, 6, 17, 156 };
+        
+        Console.WriteLine("feature_average= " + Average(listOfIntegers));
+        Console.ReadLine();
+
+    }
+    public static double Average(List<int> numbers)
+    {
         var sum = 0;
-        for (int i = 0; i < arrOfIntegers.Length; i++)
+        for (int i = 0; i < numbers.Count; i++)
         {
-            sum += arrOfIntegers[i];
+            sum += numbers[i];
         }
-        var avg = (float)sum / arrOfIntegers.Length;
-        Console.WriteLine("feature_average= " + avg);
-
-
+        var avg = (float)sum / numbers.Count;
+        return avg;
     }
 }
 
